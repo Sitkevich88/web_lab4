@@ -1,12 +1,13 @@
 package ru.itmo.services;
 
-import com.springbootsecurityrest.resources.UserRepository;
+
 import org.springframework.data.domain.Example;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ru.itmo.model.User;
+import ru.itmo.resources.UserRepository;
 
 import java.util.HashSet;
 
