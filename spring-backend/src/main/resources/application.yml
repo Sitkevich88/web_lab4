@@ -1,0 +1,29 @@
+server:
+  port: 21409
+  servlet:
+    context-path: /
+    session:
+      timeout: 600s
+
+spring:
+  datasource:
+    url: url
+    username: login
+    password: password
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,mappings

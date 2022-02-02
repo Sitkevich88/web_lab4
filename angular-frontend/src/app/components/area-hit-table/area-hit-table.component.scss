@@ -1,0 +1,65 @@
+$mid: 757px;
+$large: 1040px;
+
+.table-container-container{
+  width: 400px;
+  min-height: 500px;
+  padding: 10px;
+  border: 1px solid var(--color-left-container-border);
+  border-radius: 10px;
+  background-color: var(--color-left-container);
+  @media screen and (max-width: $large) {
+    width: 400px * 0.9;
+    min-height: 500px * 0.9;
+  }
+  @media screen and (max-width: $mid) {
+    width: 400px * 0.84;
+  }
+}
+.table-container{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+table{
+  margin: auto;
+}
+table, th, td {
+  border-collapse: collapse;
+  text-align: center;
+  padding: 3px 8px;
+  font-size: medium;
+  font-style: normal;
+  font-weight: normal;
+  /*border: 1px solid var(--color-table-border);*/
+}
+th{
+  border-block-end: 1px solid var(--color-table-border);
+}
+th{
+  font-weight: bold;
+  background-color: var(--color-table-header-background);
+  &:first-child{
+    border-top-left-radius: 10px;
+  }
+  &:last-child{
+    border-top-right-radius: 10px;
+  }
+}
+
+td, th{
+  width: 20%;
+  &:not(:last-child){
+    border-right: 2px solid var(--color-table-border);
+  }
+}
+table tr:nth-child(2n){
+  background-color: var(--color-raw-odd);
+}
+table tr:nth-child(2n+1){
+  background-color: var(--color-raw-even)
+}
+tr > td:hover{
+  border-color: red;
+  background-color: greenyellow;
+}

@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div id="formContent">
+    <h2 class="active clickable" id="signInOption" (click)="willSignIn()"> Вход </h2>
+    <h2 class="inactive underlineHover clickable" id="signUpOption" (click)="willSignUp()"> Регистрация </h2>
+    <form (ngSubmit)="authorise()">
+      <input pInputText [(ngModel)]="user.username" #login="ngModel" required minlength="5" maxlength="15" name="login" type="text" id="login" placeholder="Логин">
+      <div *ngIf="login.touched && login.invalid" class="error-container">
+        <span *ngIf="login.errors?.['required']">Нужно указать логин</span>
+        <span *ngIf="login.errors?.['minlength']">Логин слишком короткий</span>
+		    <span *ngIf="login.errors?.['maxlength']">Логин слишком длинный</span>
+      </div>
+      <input pInputText [(ngModel)]="user.password" #password="ngModel" required minlength="5" maxlength="15" name="password" type="password" id="password" placeholder="Пароль" >
+      <div *ngIf="password.touched && password.invalid" class="error-container">
+        <span *ngIf="password.errors?.['required']">Нужно указать пароль</span>
+        <span *ngIf="password.errors?.['minlength']">Пароль слишком короткий</span>
+		    <span *ngIf="password.errors?.['maxlength']">Пароль слишком длинный</span>
+      </div>
+      <div class="error-container" *ngIf="hasMessage()">
+        <span>{{errorMessage}}</span>
+      </div>
+      <input [disabled]="login.invalid || password.invalid" type="submit" class="clickable" value="Войти">
+    </form>
+  </div>
+</div>

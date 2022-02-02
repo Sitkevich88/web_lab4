@@ -1,0 +1,7 @@
+{
+  "/app/*": {
+    "target": "http://localhost:21409",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

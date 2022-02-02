@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+.theme-light{
+  --color-background: #edeef0;
+  --color-header-footer: #125e5e;
+  --color-left-container: #125e5e;
+  --color-left-container-border: #125e5e;
+  --color-form: #89f3f3;
+  --color-table-border: #000000;
+  --color-table-header-background: #83a4e5;
+  --color-raw-odd: #daf5f5;
+  --color-raw-even: #89f3f3;
+  --color-xbuttons: #2b8a8a;
+  --color-button-submit: #2633CB;
+}
+.theme-dark{
+  --color-background: #181818;
+  --color-header-footer: #212121;
+  --color-left-container: #212121;
+  --color-left-container-border: #ffffff;
+  --color-form: #676767;
+  --color-table-border: #000000;
+  --color-table-header-background: #2b8a8a;
+  --color-raw-odd: #daf5f5;
+  --color-raw-even: #a9f3f3;
+  --color-xbuttons: #2b8a8a;
+  --color-button-submit: indigo;
+}
+*{
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--color-background);
+}

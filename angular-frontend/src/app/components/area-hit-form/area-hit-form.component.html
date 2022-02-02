@@ -1,0 +1,51 @@
+<div class="form-canvas-container">
+
+  <div class="canvas-container">
+    <canvas id="graph" class="canvas" width="300" height="300">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+  </div>
+
+
+  <form class="form" id="myForm" role="form" >
+    <div class="inputs-container">
+      <div class="label-and-values">
+        <label for="x-checkbox-label-container">X: </label>
+        <div id="x-checkbox-label-container" class="checkbox-label-container">
+          <div class="x-checkbox-label checkbox-label"
+               *ngFor="let my_value of [-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2]; let i = index">
+            <label for="x{{i+1}}">{{my_value}}</label>
+            <input class="x-class" type="checkbox" ngModel #xBox="ngModel" id="x{{i+1}}" name="x" value="{{my_value}}" (change)="selectX($event)">
+          </div>
+        </div>
+      </div>
+
+      <div class="label-and-values">
+        <label for="y">Y: </label>
+        <input type="text" [(ngModel)]="pointRequest.y"
+               required minlength="1" maxlength="6" id="y" name="y" autocomplete="false" (keypress)="keyPressNumbersWithDecimal($event)">
+      </div>
+
+      <div class="label-and-values">
+        <label for="r-checkbox-label-container">R: </label>
+        <div id="r-checkbox-label-container" class="checkbox-label-container">
+          <div class="r-checkbox-label checkbox-label"
+               *ngFor="let my_value of [-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2]; let i = index">
+            <label for="r{{i+1}}">{{my_value}}</label>
+            <input class="r-class" type="checkbox" ngModel #rBox="ngModel"
+                   id="r{{i+1}}" name="r" value="{{my_value}}" (change)="selectR($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="error-container" *ngIf="hasErrorMessage()">
+      <span>{{message}}</span>
+    </div>
+
+    <div class="buttons-container">
+      <button type="submit" id="submit-button" class="pretty-button" (click)="addPoint()">Отправить</button>
+      <button type="submit" id="clear-button" class="pretty-button dangerous-button" (click)="clearPoints()"> Удалить всё</button>
+    </div>
+  </form>
+</div>
